@@ -9,12 +9,23 @@ public interface PersonService {
 
     List<Person> getAll();
 
-    Person getById(long pid) throws PersonNotFoundException;
+//    Person getById(long pid) throws PersonNotFoundException;
+//
+//    void delete(long pid) throws PersonNotFoundException;
+//
+//    void addPerson(Person person) throws PersonAlreadyExists;
+//
+//    void updatePerson(Person person, long pid) throws  PersonNotFoundException;
 
-    void delete(long pid) throws PersonNotFoundException;
+    //CRUD
+    /** READ*/
+    public Person getById(long pid) throws PersonNotFoundException;
+    /** DELETE*/
+    public void delete(long pid) throws PersonNotFoundException;
+    /** CREATE*/
+    public boolean save(Person person);
+    /** UPDATE */
+    public boolean update(Person person)throws PersonNotFoundException;
 
-    void addPerson(Person person) throws PersonAlreadyExists;
-
-    void updatePerson(Person person, long pid) throws  PersonNotFoundException;
-
+    public void saveAndFlush(Person person);
 }
